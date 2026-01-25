@@ -1,33 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react"; // ✅ For the hamburger and close icons
 import Image from "next/image";
 
 export default function Navbar() {
-  const [user, setUser] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
-
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      try {
-        const payload = JSON.parse(atob(token.split(".")[1]));
-        setUser({ role: payload.role });
-      } catch (err) {
-        console.error("Invalid token", err);
-      }
-    }
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setUser(null);
-    router.push("/login");
-  };
 
   return (
     <nav className="bg-red-950 shadow-md p-4 flex justify-between items-center relative bg-opacity-50">
@@ -48,32 +28,6 @@ export default function Navbar() {
         <Link href="/" className="text-orange-400 hover:text-blue-600">Home</Link>
         <Link href="/about" className="text-orange-400 hover:text-blue-600">About</Link>
         <Link href="/contact" className="text-orange-400 hover:text-blue-600">Contact</Link>
-        <Link href="/careers" className="text-orange-400 hover:text-blue-600">Careers</Link>
-
-
-        {user?.role === "admin" && (
-          <Link href="/admin/careers"className="text-orange-400 hover:text-blue-600 font-semibold">Manage Careers</Link>
-          
-        )}
-        {!user && (
-          <Link href="/login" className="text-orange-400 hover:text-blue-600 font-semibold">Login</Link>
-        )}
-
-        {user?.role === "guest" && (
-          <>
-            <Link href="/status" className="text-orange-400 hover:text-blue-600 font-semibold">My Submissions</Link>
-            <button onClick={handleLogout} className="text-red-600 hover:text-red-700 font-semibold">Logout</button>
-          </>
-        )}
-
-        {user?.role === "admin" && (
-          <>
-            <Link href="/admin/dashboard" className="text-orange-400 hover:text-blue-600 font-semibold">Dashboard</Link>
-            <button onClick={handleLogout} className="text-red-600 hover:text-red-700 font-semibold">Logout</button>
-          </>
-        )}
-
-
       </div>
 
 
@@ -91,25 +45,6 @@ export default function Navbar() {
           <Link href="/" className="text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/about" className="text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>About</Link>
           <Link href="/contact" className="text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Contact</Link>
-          <Link href="/careers" className="text-gray-600 hover:text-blue-600" onClick={() => setIsOpen(false)}>Careers</Link>
-
-          {!user && (
-            <Link href="/login" className="text-gray-600 hover:text-blue-600 font-semibold" onClick={() => setIsOpen(false)}>Login</Link>
-          )}
-
-          {user?.role === "guest" && (
-            <>
-              <Link href="/status" className="text-gray-600 hover:text-blue-600 font-semibold" onClick={() => setIsOpen(false)}>My Submissions</Link>
-              <button onClick={() => { handleLogout(); setIsOpen(false); }} className="text-red-600 hover:text-red-700 font-semibold">Logout</button>
-            </>
-          )}
-
-          {user?.role === "admin" && (
-            <>
-              <Link href="/admin/dashboard" className="text-gray-600 hover:text-blue-600 font-semibold" onClick={() => setIsOpen(false)}>Dashboard</Link>
-              <button onClick={() => { handleLogout(); setIsOpen(false); }} className="text-red-600 hover:text-red-700 font-semibold">Logout</button>
-            </>
-          )}
         </div>
       )}
     </nav>

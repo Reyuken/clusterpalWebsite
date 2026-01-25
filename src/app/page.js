@@ -123,7 +123,7 @@ export default function HomePage() {
                 <span className="font-medium text-yellow-200">Email:</span> admin@clusterpal.com
               </li>
               <li>
-                <span className="font-medium text-yellow-200">Phone Number:</span> +63 928 947 8804
+                <span className="font-medium text-yellow-200">Phone Number:</span> +63 918 929 3205
               </li>
               <li>
                 <span className="font-medium text-yellow-200">Facebook Page:</span>{" "}
@@ -138,7 +138,7 @@ export default function HomePage() {
               </li>
 
               <li>
-                <span className="font-medium text-yellow-200">Office Address:</span> Unit 1102, Park Centrale Bldg., IT Park, Jose Ma. Del Mar St., Lahug, Cebu City
+                <span className="font-medium text-yellow-200">Office Address:</span> Unit 37G, 37th floor, Cebu Exchange Tower, Salinas Drive, Lahug, Cebu City
               </li>
             </ul>
           </div>

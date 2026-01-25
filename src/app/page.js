@@ -18,7 +18,7 @@ export default function HomePage() {
     <>
       <Navbar />
       {/* Hero Section */}
-      <section className="relative text-white text-center py-20 px-4 overflow-hidden">
+      <section id="home" className="relative text-white text-center py-20 px-4 overflow-hidden">
         {/* Background Video */}
         <video
           ref={videoRef}
@@ -68,7 +68,7 @@ export default function HomePage() {
 
 
       {/* Services Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section id="services" className="py-16 px-6 bg-gray-50">
         <h2 className="text-3xl font-bold text-center text-black mb-12">Our Services</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           
@@ -101,16 +101,96 @@ export default function HomePage() {
 
 
       {/* About Section */}
-      <section className="py-16 px-6 text-center bg-white">
+      <section id="about" className="py-16 px-6 text-center bg-white">
         <h2 className="text-3xl font-bold text-black mb-6">Why Choose Clusterpal?</h2>
         <p className="max-w-3xl mx-auto text-gray-700 text-lg">
           Clusterpal is a trusted BPO partner that helps businesses scale with dependable outsourcing solutions.
           With our customer-first approach, global expertise, and commitment to excellence — we turn operations into opportunities.
         </p>
+
+        <div className="p-8 max-w-4xl mx-auto text-gray-800">
+          {/* Header */}
+          <h1 className="text-4xl font-bold text-black mb-6 text-center">
+            About Clusterpal
+          </h1>
+
+          {/* The Story */}
+          <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
+            <h2 className="text-2xl font-semibold text-black mb-3">The Story</h2>
+            <p className="leading-relaxed mb-4">
+              Founded in January 2023 with an ambition to support workforce requirements from International Companies to the Philippines and thus providing job opportunities to Filipinos through Outsourcing.
+            </p>
+            <p className="leading-relaxed mb-4">
+              The name <span className="font-semibold text-black">Clusterpal </span>  
+              comes from the words <em>“Cluster”</em> and <em>“Pal”</em> — representing 
+              our belief in unity and partnership. Just as clusters are groups that 
+              work better together, we see every client as a pal — a trusted ally in 
+              achieving shared success.
+            </p>
+            <p className="leading-relaxed">
+              We pride ourselves with honesty, integrity and bringing the right people together to support clients worldwide.      What started as a simple idea — to help organizations focus on what they do
+              best — has evolved into a mission to redefine how outsourcing supports
+              business success.
+            </p>
+          </section>
+
+          {/* Mission */}
+          <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
+            <h2 className="text-2xl font-semibold text-black mb-3">Our Mission</h2>
+            <p className="leading-relaxed">
+            To help our clients grow their businesses by providing exceptional outsourcing services in a cost-efficient platform.
+            </p>
+          </section>
+
+          {/* Vision */}
+          <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
+            <h2 className="text-2xl font-semibold text-black mb-3">Our Vision</h2>
+            <p className="leading-relaxed">
+              To be one of the most trusted business process outsourcing companies in the Philippines.
+            </p>
+          </section>
+
+          {/* Core Values */}
+          <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
+            <h2 className="text-2xl font-semibold text-black mb-3">Core Values</h2>
+            <ul className="list-disc list-inside leading-relaxed space-y-2">
+              <li><strong><span className="text-orange-400">C</span></strong> – Competent individuals</li>
+              <li><strong><span className="text-orange-400">L</span></strong> – Level-headed people</li>
+              <li><strong><span className="text-orange-400">U</span></strong> – Understanding clients’ needs</li>
+              <li><strong><span className="text-orange-400">S</span></strong> – Good stewards of clients’ business processes</li>
+              <li><strong><span className="text-orange-400">T</span></strong> – Teamwork</li>
+              <li><strong><span className="text-orange-400">E</span></strong> – Equality and</li>
+              <li><strong><span className="text-orange-400">R</span></strong> – Respect amongst colleagues and peers</li>
+              <li><strong><span className="text-orange-400">P</span></strong> – Passion in everything we do</li>
+              <li><strong><span className="text-orange-400">A</span></strong> – Accountability in our actions</li>
+              <li><strong><span className="text-orange-400">L</span></strong> – Leadership to serve the common good</li>
+            </ul>
+          </section>
+
+          {/* Services Offered */}
+          <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
+            <h2 className="text-2xl font-semibold text-black mb-3">Services Offered</h2>
+            <p className="leading-relaxed mb-3">
+              Clusterpal provides a wide range of non-voice business process outsourcing services
+              designed to support companies in their daily operations with efficiency and reliability.
+            </p>
+            <ul className="list-disc list-inside leading-relaxed space-y-2">
+              <li>Finance and Accounting</li>
+              <li>Bookkeeping Services</li>
+              <li>Recruitment</li>
+              <li>And other related non-voice support solutions</li>
+            </ul>
+          </section>
+
+          {/* Closing Quote */}
+          <p className="text-gray-600 italic text-center mt-10">
+            Empowering businesses. Enabling people. Elevating performance.
+          </p>
+        </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-gradient-to-r from-red-900 to-red-950 text-white py-12 px-8">
+      <section id="contact" className="bg-gradient-to-r from-red-900 to-red-950 text-white py-12 px-8">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
           
           {/* Further Inquiries (Left Side) */}

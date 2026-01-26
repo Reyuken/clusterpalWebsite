@@ -106,14 +106,9 @@ export default function HomePage() {
       {/* Why Choose Us Section */}
       <section id="why-choose" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center mb-16">
               Why Choose Us
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Clusterpal is a trusted BPO partner that helps businesses scale with dependable outsourcing solutions. With our customer-first approach, global expertise, and commitment to excellence — we turn operations into opportunities.
-            </p>
-          </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="relative w-full h-80"> 

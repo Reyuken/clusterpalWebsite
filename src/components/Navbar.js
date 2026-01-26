@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 bg-red-950/95 shadow-md p-4 flex justify-between items-center z-50">
       
       {/* Logo → real route, so Link is OK */}
-      <Link href="/" className="flex items-center space-x-2">
+      <a href="#home" className="flex items-center space-x-2">
         <Image
           src="/images/clusterpalLogo.png"
           alt="ClusterPal Logo"
@@ -26,7 +26,7 @@ export default function Navbar() {
         >
           CLUSTERPAL
         </span>
-      </Link>
+      </a>
 
       {/* Desktop Links (ANCHORS, not Link) */}
       <div className="hidden md:flex space-x-4">

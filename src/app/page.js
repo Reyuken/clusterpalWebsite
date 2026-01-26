@@ -3,14 +3,37 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { 
   Menu, X, Phone, Mail, MapPin, Headphones, Users, 
   TrendingUp, Award, Shield, Clock, Target, Eye, Heart, Zap
 } from 'lucide-react';
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function HomePage() {
   const videoRef = useRef(null);
+  const [currentValueIndex, setCurrentValueIndex] = useState(0);
+
+  const coreValues = [
+    { title: "Competence", description: "We are competent individuals who deliver quality work with skill and professionalism." },
+    { title: "Level-Headedness", description: "We remain calm, thoughtful, and objective in every situation." },
+    { title: "Understanding", description: "We take time to understand our clients’ needs and business goals." },
+    { title: "Stewardship", description: "We act as responsible stewards of our clients’ business processes." },
+    { title: "Teamwork", description: "We believe collaboration creates stronger and more effective results." },
+    { title: "Equality", description: "We promote fairness, inclusivity, and equal opportunity for everyone." },
+    { title: "Respect", description: "We treat colleagues, clients, and partners with dignity and respect." },
+    { title: "Passion", description: "We bring passion and commitment to everything we do." },
+    { title: "Accountability", description: "We take full ownership of our actions and responsibilities." },
+    { title: "Leadership", description: "We lead with purpose and serve the common good." }
+  ];
+
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentValueIndex((prev) => (prev + 1) % coreValues.length);
+  }, 3000);
+    return () => clearInterval(interval);
+  }, [coreValues.length]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -189,71 +212,141 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-   
-      {/* The Story */}
-      <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
-        <div className="p-8 max-w-4xl mx-auto text-gray-800">
-        {/* Header */}
-          <h1 className="text-4xl font-bold text-black mb-6 text-center">
-            About Clusterpal
-          </h1>
+
+    {/* About Section */}
+      <section id="about" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              About Us
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Your trusted partner in business process outsourcing
+            </p>
+          </div>
+
+          {/* Our Story */}
+          <div className="mb-16">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                  Our Story
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  Founded in January 2023 with an ambition to support workforce requirements from International Companies to the Philippines and thus providing job opportunities to Filipinos through Outsourcing.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  The name <span className="font-semibold text-black">Clusterpal </span>  
+                  comes from the words <em>“Cluster”</em> and <em>“Pal”</em> — representing 
+                  our belief in unity and partnership. Just as clusters are groups that 
+                  work better together, we see every client as a pal — a trusted ally in 
+                  achieving shared success.
+                </p>
+                <p className="text-gray-600">
+                  We pride ourselves with honesty, integrity and bringing the right people together to support clients worldwide.      What started as a simple idea — to help organizations focus on what they do
+                  best — has evolved into a mission to redefine how outsourcing supports
+                  business success.
+                </p>
+              </div>
+              <div className="order-1 md:order-2">
+                <Image
+                  src="/images/office.jfif"
+                  alt="Modern office workspace"
+                  className="rounded-lg shadow-xl"
+                  width={70}
+                  height={70}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Mission, Vision, Core Values */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Mission */}
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                <Target className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Our Mission
+              </h3>
+              <p className="text-gray-600">
+                To help our clients grow their businesses by providing exceptional outsourcing services in a cost-efficient platform.
+              </p>
+            </div>
+
+            {/* Vision */}
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                <Eye className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Our Vision
+              </h3>
+              <p className="text-gray-600">
+                To be one of the most trusted business process outsourcing companies in the Philippines.
+              </p>
+            </div>
+            {/* Core Values */}
+            <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                <Heart className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                Core Values
+              </h3>
+              <div className="relative h-40 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentValueIndex}
+                    initial={{ x: 300, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -300, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    className="absolute inset-0 flex flex-col justify-center"
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-3xl text-green-600 font-bold">
+                        {currentValueIndex + 1}
+                      </span>
+                      <h4 className="text-2xl font-bold text-gray-900">
+                        {coreValues[currentValueIndex].title}
+                      </h4>
+                    </div>
+                    <p className="text-lg text-gray-600">
+                      {coreValues[currentValueIndex].description}
+                    </p>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+              {/* Progress indicators */}
+              <div className="flex gap-2 mt-6 justify-center">
+                {coreValues.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentValueIndex(index)}
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentValueIndex 
+                        ? 'w-8 bg-green-600' 
+                        : 'w-2 bg-gray-300 hover:bg-gray-400'
+                    }`}
+                    aria-label={`Go to value ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
-        <h2 className="text-2xl font-semibold text-black mb-3">The Story</h2>
-        <p className="leading-relaxed mb-4">
-          Founded in January 2023 with an ambition to support workforce requirements from International Companies to the Philippines and thus providing job opportunities to Filipinos through Outsourcing.
-        </p>
-        <p className="leading-relaxed mb-4">
-          The name <span className="font-semibold text-black">Clusterpal </span>  
-          comes from the words <em>“Cluster”</em> and <em>“Pal”</em> — representing 
-          our belief in unity and partnership. Just as clusters are groups that 
-          work better together, we see every client as a pal — a trusted ally in 
-          achieving shared success.
-        </p>
-        <p className="leading-relaxed">
-          We pride ourselves with honesty, integrity and bringing the right people together to support clients worldwide.      What started as a simple idea — to help organizations focus on what they do
-          best — has evolved into a mission to redefine how outsourcing supports
-          business success.
-        </p>
-      </section>
 
-      {/* Mission */}
-      <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
-        <h2 className="text-2xl font-semibold text-black mb-3">Our Mission</h2>
-        <p className="leading-relaxed">
-        To help our clients grow their businesses by providing exceptional outsourcing services in a cost-efficient platform.
+        {/* Closing Quote */}
+        <p className="text-gray-600 italic text-center ">
+          Empowering businesses. Enabling people. Elevating performance.
         </p>
-      </section>
-
-      {/* Vision */}
-      <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
-        <h2 className="text-2xl font-semibold text-black mb-3">Our Vision</h2>
-        <p className="leading-relaxed">
-          To be one of the most trusted business process outsourcing companies in the Philippines.
-        </p>
-      </section>
-
-      {/* Core Values */}
-      <section className="mb-8 transition-transform duration-500 hover:-translate-y-2">
-        <h2 className="text-2xl font-semibold text-black mb-3">Core Values</h2>
-        <ul className="list-disc list-inside leading-relaxed space-y-2">
-          <li><strong><span className="text-orange-400">C</span></strong> – Competent individuals</li>
-          <li><strong><span className="text-orange-400">L</span></strong> – Level-headed people</li>
-          <li><strong><span className="text-orange-400">U</span></strong> – Understanding clients’ needs</li>
-          <li><strong><span className="text-orange-400">S</span></strong> – Good stewards of clients’ business processes</li>
-          <li><strong><span className="text-orange-400">T</span></strong> – Teamwork</li>
-          <li><strong><span className="text-orange-400">E</span></strong> – Equality and</li>
-          <li><strong><span className="text-orange-400">R</span></strong> – Respect amongst colleagues and peers</li>
-          <li><strong><span className="text-orange-400">P</span></strong> – Passion in everything we do</li>
-          <li><strong><span className="text-orange-400">A</span></strong> – Accountability in our actions</li>
-          <li><strong><span className="text-orange-400">L</span></strong> – Leadership to serve the common good</li>
-        </ul>
-      </section>
-
-      {/* Closing Quote */}
-      <p className="text-gray-600 italic text-center mt-10">
-        Empowering businesses. Enabling people. Elevating performance.
-      </p>
       
+      </section>
+
+
 
       {/* Call to Action */}
       <section id="contact" className="bg-gradient-to-r from-red-900 to-red-950 text-white py-12 px-8">

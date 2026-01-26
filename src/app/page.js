@@ -69,6 +69,7 @@ export default function HomePage() {
               alt="ClusterPal Logo"
               width={180}
               height={60}
+              style={{ height: "auto", width: "auto" }}
               priority
             />
             <h2

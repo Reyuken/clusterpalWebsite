@@ -18,6 +18,7 @@ export default function Navbar() {
           alt="ClusterPal Logo"
           width={70}
           height={70}
+          style={{ height: "auto", width: "auto" }}
           priority
         />
         <span

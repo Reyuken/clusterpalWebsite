@@ -96,7 +96,7 @@ export default function HomePage() {
 
       {/* Services Section */}
       <section id="services" className="py-16 px-6 bg-gray-50">
-        <h2 className="text-3xl font-bold text-center text-black mb-12">Our Services</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">Our Services</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           
           <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
@@ -387,7 +387,7 @@ export default function HomePage() {
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-3xl font-bold mb-4">Ready to Grow with Us?</h2>
               <a
-                href="#contact"
+                href="mailto:admin@clusterpal.com"
                 className="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition inline-block"
               >
                 Contact Us Today

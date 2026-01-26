@@ -391,7 +391,7 @@ export default function HomePage() {
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-3xl font-bold mb-4">Ready to Grow with Us?</h2>
               <a
-                href="mailto:admin@clusterpal.com"
+                href=""
                 className="bg-yellow-400 text-blue-900 font-semibold px-6 py-3 rounded hover:bg-yellow-300 transition inline-block"
               >
                 Contact Us Today

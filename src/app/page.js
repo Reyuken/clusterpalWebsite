@@ -252,7 +252,7 @@ export default function HomePage() {
               </div>
               <div className="order-1 md:order-2 relative w-full h-64 md:h-96">
                 <Image
-                  src="/images/office.jfif"
+                  src="/images/office2.jfif"
                   alt="Modern office workspace"
                   fill
                   style={{ objectFit: "cover" }}

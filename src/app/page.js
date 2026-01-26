@@ -141,6 +141,7 @@ export default function HomePage() {
                 alt="Office worker consulting with client at desk"
                 fill
                 className="rounded-lg shadow-xl object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw" 
                 priority
               />
             </div>
@@ -249,13 +250,15 @@ export default function HomePage() {
                   business success.
                 </p>
               </div>
-              <div className="order-1 md:order-2">
+              <div className="order-1 md:order-2 relative w-full h-64 md:h-96">
                 <Image
                   src="/images/office.jfif"
                   alt="Modern office workspace"
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="rounded-lg shadow-xl"
-                  width={70}
-                  height={70}
+                  priority
                 />
               </div>
             </div>
